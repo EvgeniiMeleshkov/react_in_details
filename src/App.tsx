@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
-import {OnOff} from './OnOff/OnOff';
+import {OnOff} from './components/OnOff/OnOff';
 import UncontrolledAccordion from './components/Accordion/UncontrolledAccordion';
 import {UncontrolledRating} from './components/Rating/UncontrolledRating';
 
@@ -16,6 +16,7 @@ function App() {
             <Accordion titleValue={'First Accordion Title'} collapsed={true} />
             <Accordion titleValue={'Second Accordion Title'} collapsed={false} />
             <hr/>
+
             <Rating value={1}/>
             <Rating value={2}/>
             <Rating value={3}/>
@@ -25,9 +26,11 @@ function App() {
             <OnOff/>
             <OnOff/>
             <hr/>
+
             <UncontrolledAccordion titleValue={'Uncontrolled first'}/>
             <UncontrolledAccordion titleValue={'Uncontrolled second'}/>
             <hr/>
+
             <UncontrolledRating/>
             <UncontrolledRating/>
             <UncontrolledRating/>
