@@ -2,20 +2,22 @@ import React, {useState} from 'react';
 
 type AccordionPropsType = {
     titleValue: string
+    toggle: boolean
+    setToggle: (toggle: boolean)=>void
 }
 
 function UncontrolledAccordion(props: AccordionPropsType) {
     console.log('Accordion rendering')
 
-    const [toggle, setToggle] = useState(false)
+
     const toggleFun = () => {
-        setToggle(!toggle)
+        props.setToggle(!props.toggle)
     }
 
     return (
         <div>
             <AccordionTitle toggleFun={toggleFun} title={props.titleValue}/>
-            {toggle &&
+            {props.toggle &&
                 <AccordionBody/>
             }
         </div>
