@@ -13,12 +13,13 @@ function App() {
     const [value1, setValue1] = useState(false)
     const [value2, setValue2] = useState(false)
     const [value,setValue] = useState(0)
+    const elements = ['Viktor', 'Sveta', 'Ignat', 'Dimich']
     return (
         <div className="App">
             <PageTitle title={'This is APP COMPONENT'}/>
             <hr/>
 
-            <Accordion titleValue={'First Accordion Title'} collapsed={collapsed} setCollapsed={()=>setCollapsed(!collapsed)}/>
+            <Accordion elements={elements} titleValue={'First Accordion Title'} collapsed={collapsed} setCollapsed={()=>setCollapsed(!collapsed)}/>
             <hr/>
 
 

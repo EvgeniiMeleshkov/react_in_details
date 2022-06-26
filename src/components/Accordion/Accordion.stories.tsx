@@ -8,5 +8,6 @@ export default {
 
 export const AccordionSample = () => {
     const [val, setVal] = useState<boolean>(false)
-    return <Accordion setCollapsed={()=>setVal(!val)} titleValue={'Sample'} collapsed={val}/>
+    return <Accordion elements={['first', 'second', 'therd']} setCollapsed={()=>setVal(!val)} titleValue={'Sample'} collapsed={val}/>
 }
+

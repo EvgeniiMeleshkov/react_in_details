@@ -1,9 +1,10 @@
 import React from 'react';
 
-type AccordionPropsType = {
-    setCollapsed: ()=>void
+export type AccordionPropsType = {
+    setCollapsed: () => void
     titleValue: string,
     collapsed: boolean
+    elements: Array<string>
 }
 
 export const Accordion = (props: AccordionPropsType) => {
@@ -12,7 +13,7 @@ export const Accordion = (props: AccordionPropsType) => {
         <div>
             <AccordionTitle setCollapsed={props.setCollapsed} title={props.titleValue}/>
             {!props.collapsed &&
-                <AccordionBody/>
+                <AccordionBody elements={props.elements}/>
             }
         </div>
     )
@@ -29,13 +30,20 @@ function AccordionTitle(props: AccordionTitlePropsType) {
     )
 }
 
-function AccordionBody() {
-    console.log('AccordionBody rendering')
+type AccordionBodyPropsType = {
+    elements: Array<string>
+}
+export const AccordionBody = (props: AccordionBodyPropsType) => {
+    const mappedElements = props.elements.map(el => {
+        return (
+            <ul>
+                <li>{el}</li>
+            </ul>
+        )
+    })
     return (
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-        </ul>
+        <>
+            {mappedElements}
+        </>
     )
 }
