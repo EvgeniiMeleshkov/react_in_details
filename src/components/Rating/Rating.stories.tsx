@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import {Rating} from './Rating';
+import {Rating, RatingPropsType} from './Rating';
+import {Story} from '@storybook/react';
 
 
 export default {
@@ -13,7 +14,7 @@ export const ThreeStarRating = () => {return <Rating value={3} onClick={x=>x}/>}
 export const FourStarRating = () => {return <Rating value={4} onClick={x=>x}/>}
 export const FiveStarRating = () => {return <Rating value={5} onClick={x=>x}/>}
 
-export const ChangingRating = () => {
+export const ChangingRating: Story<RatingPropsType> = (args) => {
     const [rating, setRating] = useState<number>(0)
     return <Rating value={rating} onClick={setRating}/>
 }

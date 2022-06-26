@@ -1,6 +1,6 @@
 import React, {Dispatch, SetStateAction} from 'react';
 
-type RatingPropsType = {
+export type RatingPropsType = {
     value: number
     onClick: (val: number)=>void
 }

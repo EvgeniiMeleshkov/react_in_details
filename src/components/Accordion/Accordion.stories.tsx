@@ -1,13 +1,18 @@
 import React, {useState} from "react";
-import {Accordion} from './Accordion';
+import {Accordion, AccordionPropsType} from './Accordion';
+import {Story} from '@storybook/react';
 
 export default {
     title: 'Accordion',
     component: Accordion
 };
 
-export const AccordionSample = () => {
+export const AccordionSample: Story<AccordionPropsType> = (args) => {
     const [val, setVal] = useState<boolean>(false)
-    return <Accordion elements={['first', 'second', 'therd']} setCollapsed={()=>setVal(!val)} titleValue={'Sample'} collapsed={val}/>
+    return <Accordion {...args} collapsed={val} setCollapsed={()=>setVal(!val)}/>
 }
 
+AccordionSample.args = {
+    elements: ['first', 'second', 'therd'],
+    titleValue: 'Sample',
+}
