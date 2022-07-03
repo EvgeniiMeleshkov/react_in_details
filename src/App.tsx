@@ -13,13 +13,19 @@ function App() {
     const [value1, setValue1] = useState(false)
     const [value2, setValue2] = useState(false)
     const [value,setValue] = useState(0)
-    const elements = ['Viktor', 'Sveta', 'Ignat', 'Dimich']
+    const elements = [{value: 'Dimich', id: '1'},
+        {value: 'Sveta', id: '2'},
+        {value: 'Victor', id: '3'},
+        {value: 'Igor', id: '4'}]
+    const onItemClick = (value: string) => {
+        alert(`${value} clicked`)
+    }
     return (
         <div className="App">
             <PageTitle title={'This is APP COMPONENT'}/>
             <hr/>
 
-            <Accordion elements={elements} titleValue={'First Accordion Title'} collapsed={collapsed} setCollapsed={()=>setCollapsed(!collapsed)}/>
+            <Accordion onItemClick={onItemClick} elements={elements} titleValue={'First Accordion Title'} collapsed={collapsed} setCollapsed={()=>setCollapsed(!collapsed)}/>
             <hr/>
 
 
