@@ -1,0 +1,29 @@
+.main {
+
+}
+.select {
+    text-align: end;
+    display: inline-block;
+    min-height: 15px;
+    min-width: 40px;
+    border: 1px solid black;
+    padding: 0 2px 0 2px;
+    border-radius: 5px;
+}
+.items {
+    margin-top: 5px;
+    position: absolute;
+    border: 1px solid black;
+    padding: 0 2px 0 2px;
+    border-radius: 5px;
+}
+.itemsCollapsed {
+    visibility: hidden;
+}
+.item {
+    text-align: center;
+    border-radius: 5px;
+}
+.item:hover {
+    background-color: rgba(195, 211, 234, 0.48);
+}

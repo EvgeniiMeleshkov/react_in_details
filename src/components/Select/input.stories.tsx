@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useRef, useState} from 'react';
 import {Story} from '@storybook/react';
-import {Rating, RatingPropsType} from '../components/Rating/Rating';
+import {Rating, RatingPropsType} from '../Rating/Rating';
 import {action} from '@storybook/addon-actions';
 
 export default {

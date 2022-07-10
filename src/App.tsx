@@ -5,6 +5,8 @@ import {Rating} from './components/Rating/Rating';
 import {OnOff} from './components/OnOff/OnOff';
 import UncontrolledAccordion from './components/Accordion/UncontrolledAccordion';
 import {UncontrolledRating} from './components/Rating/UncontrolledRating';
+import {Select} from './components/Select/Select';
+import {CustomSelect, ItemType} from './components/Select/CustomSelect/CustomSelect';
 
 function App() {
     console.log('App rendering')
@@ -20,6 +22,14 @@ function App() {
     const onItemClick = (value: string) => {
         alert(`${value} clicked`)
     }
+    const stateForSelect = ['One', 'Two', 'Three', 'Five', 'Six']
+    const [select, setSelect] = useState(stateForSelect[0])
+    const itemsForCustomSelect: ItemType[] = [
+        {id: '1', title: 'John'},
+        {id: '2', title: 'Bob'},
+        {id: '3', title: 'William'}
+    ]
+    const [item, setItem] = useState()
     return (
         <div className="App">
             <PageTitle title={'This is APP COMPONENT'}/>
@@ -43,6 +53,10 @@ function App() {
             <UncontrolledRating/>
             <UncontrolledRating/>
             <UncontrolledRating/>
+            <hr/>
+            <Select elements={stateForSelect} onChange={setSelect}/>
+            <hr/>
+            <CustomSelect items={itemsForCustomSelect} onChangeValue={setItem} value={item}/>
         </div>
     );
 }
@@ -52,7 +66,6 @@ type PageTitlePropsType = {
 }
 
 function PageTitle(props: PageTitlePropsType) {
-    console.log('PageTitle rendering')
     return (
         <div>{props.title}</div>
     )
