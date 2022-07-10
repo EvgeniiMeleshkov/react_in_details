@@ -28,6 +28,9 @@ export const CustomSelect: React.FC<CustomSelectPropsType> = (props) => {
             setIsHidden(true)
             props.onChangeValue(i)
         }
+        const onBlurHandler = () => {
+            setIsHidden(true)
+        }
         const onKeyHandler = (e: KeyboardEvent<HTMLDivElement>) => {
             if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
                 for (let i = 0; i < props.items.length; i++) {
@@ -52,6 +55,7 @@ export const CustomSelect: React.FC<CustomSelectPropsType> = (props) => {
 
         return (
             <div
+                onBlur={onBlurHandler}
                 className={s.main}
                 tabIndex={0}
                 onKeyUp={onKeyHandler}>
