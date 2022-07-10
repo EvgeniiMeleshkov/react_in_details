@@ -1,5 +1,5 @@
 .main {
-
+    outline: none;
 }
 .select {
     text-align: end;
@@ -24,6 +24,7 @@
     text-align: center;
     border-radius: 5px;
 }
-.item:hover {
-    background-color: rgba(195, 211, 234, 0.48);
+.item.selected {
+    background-color: rgba(100, 149, 237, 0.44);
+    color: snow;
 }

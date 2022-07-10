@@ -22,8 +22,6 @@ function App() {
     const onItemClick = (value: string) => {
         alert(`${value} clicked`)
     }
-    const stateForSelect = ['One', 'Two', 'Three', 'Five', 'Six']
-    const [select, setSelect] = useState(stateForSelect[0])
     const itemsForCustomSelect: ItemType[] = [
         {id: '1', title: 'John'},
         {id: '2', title: 'Bob'},
@@ -54,7 +52,7 @@ function App() {
             <UncontrolledRating/>
             <UncontrolledRating/>
             <hr/>
-            <Select elements={stateForSelect} onChange={setSelect}/>
+
             <hr/>
             <CustomSelect items={itemsForCustomSelect} onChangeValue={setItem} value={item}/>
         </div>
