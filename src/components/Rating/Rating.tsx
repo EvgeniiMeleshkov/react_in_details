@@ -36,8 +36,8 @@ function Star(props: StarPropType) {
     return (
         props.selected === true
             ? (<span onClick={() => props.starsValue(props.num)}>
-            <b> star </b>
+            <b>★</b>
         </span>)
-            : (<span onClick={() => props.starsValue(props.num)}> star </span>)
+            : (<span onClick={() => props.starsValue(props.num)}>☆</span>)
     )
 }
