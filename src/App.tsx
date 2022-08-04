@@ -7,6 +7,7 @@ import UncontrolledAccordion from './components/Accordion/UncontrolledAccordion'
 import {UncontrolledRating} from './components/Rating/UncontrolledRating';
 import {Select} from './components/Select/Select';
 import {CustomSelect, ItemType} from './components/Select/CustomSelect/CustomSelect';
+import {Clock} from './components/Clock/Clock';
 
 function App() {
     console.log('App rendering')
@@ -51,10 +52,11 @@ function App() {
             <UncontrolledRating/>
             <UncontrolledRating/>
             <UncontrolledRating/>
-            <hr/>
 
             <hr/>
             <CustomSelect items={itemsForCustomSelect} onChangeValue={setItem} value={item}/>
+            <hr/>
+            <Clock/>
         </div>
     );
 }
