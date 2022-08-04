@@ -29,6 +29,7 @@ function App() {
         {id: '3', title: 'William'}
     ]
     const [item, setItem] = useState()
+    const [isAnalog, setIsAnalog] = useState(true)
     return (
         <div className="App">
             <PageTitle title={'This is APP COMPONENT'}/>
@@ -56,7 +57,7 @@ function App() {
             <hr/>
             <CustomSelect items={itemsForCustomSelect} onChangeValue={setItem} value={item}/>
             <hr/>
-            <Clock/>
+            <Clock isAnalog={isAnalog}/>
         </div>
     );
 }
